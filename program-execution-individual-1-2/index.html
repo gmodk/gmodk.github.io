@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explorations of a curious mind on mathematical structures and abstraction.">
+    <title>program_execution_individual::(1/2) · G/Ker(φ) ≅ Im(φ)</title>
+    <link rel="stylesheet" href="https://gmodk.github.io/theme/css/style.css">
+    <link href="feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="G/Ker(φ) ≅ Im(φ) Atom Feed">
+</head>
+<body>
+    <div class="site-shell">
+        <header class="site-header">
+            <a class="site-title" href="https://gmodk.github.io/">G/Ker(φ) ≅ Im(φ)</a>
+            <p class="site-subtitle">Explorations of a curious mind on mathematical structures and abstraction.</p>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="https://gmodk.github.io/">_kernel</a>
+                <a href="https://gmodk.github.io/theses/">_theses</a>
+            </nav>
+        </header>
+
+        <main id="main-content">
+<article class="article">
+    <header class="article-header">
+        <h1>program_execution_individual::(1/2)</h1>
+        <p class="article-meta">
+            <time datetime="2026-10-10T00:00:00-03:00">Sat 10 October 2026</time>
+        </p>
+    </header>
+    <div class="prose article-content">
+        <hr>
+<ul>
+<li>What mathematical distinctions would we need to separate a Program, its Execution,
+and an emergent Individual without assuming in advance that these are three different
+ontological kinds?</li>
+</ul>
+<p>&nbsp;</p>
+<p>a) Set up</p>
+<p>Let <span class="math">\(P\)</span> be a genrative structure, <span class="math">\(C\)</span> the space of initial conditions or contingences,
+and <span class="math">\(I\)</span> the space of possible realizations. We define a map <span class="math">\(\phi: P x C \to I\)</span>:</p>
+<p>Supose <span class="math">\(R = Im(\phi)\)</span> is the set of realizable executions. A level of description is then
+given by a structure preserving map:</p>
+<div class="math">$$
+    H_{\alpha}: R \to D_{\alpha}
+$$</div>
+<p>with <span class="math">\(R = Im(\phi) \subseteq I\)</span> and <span class="math">\(\phi(P,C) = i\)</span></p>
+<p>&nbsp;</p>
+<p>b) Formally
+For each descriptive map <span class="math">\(H_{\alpha}\)</span>, we define:</p>
+<div class="math">$$
+    r_1 ~ r_2 &lt;=&gt; H_{\alpha}(r_1) = H_{\alpha}(r_2)
+$$</div>
+<p>Then, the descriptive level is the quotient:</p>
+<div class="math">$$
+    D_{\alpha} \cong \frac{R}{r_{\alpha}}
+$$</div>
+<p>This is equivalent to:</p>
+<div class="math">$$
+    \frac{R}{Ker H_{\alpha}} \cong Im H_{\alpha}
+$$</div>
+<p>&nbsp;</p>
+<p>c) Conclusion</p>
+<p>The program, its execution and the emergent individual need not to be three different ontological kinds. They can be understood as different mathematical roles within one structure, where:</p>
+<ul>
+<li>
+<p>P specifies possibilites.</p>
+</li>
+<li>
+<p>R contains realized trajectories.</p>
+</li>
+<li>
+<p>An individual can be represented as an equivalence class <span class="math">\([r_{\alpha}]\)</span>
+at a chosen description level <span class="math">\(D_{\alpha}\)</span>.</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>d) Intuitevely</p>
+<p>The idea is that a system contains more detail that any description of that system prserveres. The map <span class="math">\(\phi\)</span> generates actual realizations from the program, while each <span class="math">\(H_{\alpha}\)</span>
+forgets some distinctions and keeps others.</p>
+<p>Two different realizations may tehrefore count as the same individual whenerver they
+become identical under the chosen description, so individuality emerges from the structure
+we preserve across transformations rather than being assumed beforehand.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+    </div>
+    <p class="article-tags">
+        <a href="https://gmodk.github.io/tag/consciousness.html">#consciousness</a>         <a href="https://gmodk.github.io/tag/representation.html">#representation</a>    </p>
+    <nav class="article-nav" aria-label="Article navigation">
+    </nav>
+</article>
+        </main>
+
+        <footer class="site-footer">
+            <p class="footer-small">I deliver these explorations freely and with no restrictions at all. Share them, break them, make them better. And extend the same courtesy to the next explorer.
+            <p class="footer-small">Generated with <a href="https://getpelican.com/">Pelican</a> using <a href="https://gitea.com/gmodk/blog">this code</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explorations of a curious mind on mathematical structures and abstraction.">
+    <title>program_execution_individual::(2/2) · G/Ker(φ) ≅ Im(φ)</title>
+    <link rel="stylesheet" href="https://gmodk.github.io/theme/css/style.css">
+    <link href="feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="G/Ker(φ) ≅ Im(φ) Atom Feed">
+</head>
+<body>
+    <div class="site-shell">
+        <header class="site-header">
+            <a class="site-title" href="https://gmodk.github.io/">G/Ker(φ) ≅ Im(φ)</a>
+            <p class="site-subtitle">Explorations of a curious mind on mathematical structures and abstraction.</p>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="https://gmodk.github.io/">_kernel</a>
+                <a href="https://gmodk.github.io/theses/">_theses</a>
+            </nav>
+        </header>
+
+        <main id="main-content">
+<article class="article">
+    <header class="article-header">
+        <h1>program_execution_individual::(2/2)</h1>
+        <p class="article-meta">
+            <time datetime="2026-10-11T00:00:00-03:00">Sun 11 October 2026</time>
+        </p>
+    </header>
+    <div class="prose article-content">
+        <hr>
+<p>... <a href="https://gmodk.codeberg.page/program-execution-individual-1-2/">program_execution_individual::(1/2)</a></p>
+<p>&nbsp;</p>
+<ul>
+<li>
+<p>If a system develops from a set of initial specifications, what structures could distinguish between
+predeterminated information and genuinely path-dependent organization?</p>
+</li>
+<li>
+<p>What invariants would have to persist through development for we to say that one
+evolving system remains numerically the same individual?</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>a) Set up</p>
+<p>Let the function <span class="math">\(\phi: P x C \to R\)</span> to map a tuple <span class="math">\((p,c)\)</span>  to a realization <span class="math">\(r\)</span>, where <span class="math">\(p \in P\)</span> is a program and <span class="math">\(c \in C\)</span> is a contingency (history).</p>
+<p>Let the map <span class="math">\(H_{\alpha}: R \to D_{\alpha}\)</span> to extract the organization into some descriptive level. Then, we have:</p>
+<div class="math">$$
+    H_{\alpha}(P,C) = H_{\alpha}(\phi(p,c))
+$$</div>
+<p>which is the realized organization along a particular path.</p>
+<p>&nbsp;</p>
+<p>b) Formally</p>
+<p>The path-dependent part is the variation of the <span class="math">\(H_{\alpha}\)</span> over <span class="math">\(C\)</span>. If <span class="math">\(C\)</span> has a probability measure <span class="math">\(\mu\)</span>, we define its predictable component by:</p>
+<div class="math">$$
+    \bar{H}_{\alpha}(p) = \int_{c}^{\infty} H_{\alpha}(p,c) \, d{\mu(c)} = E[H_{\alpha} | P = p]
+$$</div>
+<p>And the path-dependent derivation by:</p>
+<div class="math">$$
+    \Delta_{\alpha}(p,c) = H_{\alpha} - \bar{H}_{\alpha}(p-c)
+$$</div>
+<p>&nbsp;</p>
+<p>c) Conclusion</p>
+<p>We conclude, therefore that:</p>
+<div class="math">$$
+    H_{\alpha}(p,c) = H_{\alpha}(p) + \Delta_{\alpha}(p,c)
+$$</div>
+<p>where:
+- <span class="math">\(H_{\alpha}(p)\)</span> is the predictable path from <span class="math">\(p\)</span>.</p>
+<ul>
+<li><span class="math">\(\Delta_{\alpha}(p,c)\)</span> is the history dependant path.</li>
+</ul>
+<p>But the integral represents an expected or predictable component, not necessarily strcited predetermined information, which would required invariance across all <span class="math">\(c \in C\)</span>.</p>
+<p>&nbsp;</p>
+<p>d) Intuitevely</p>
+<p>The program defines what can systematically be expected across all possible histories, while (<span class="math">\(H_{\alpha}(p) \circ \phi\)</span>) captures what actually emerges in one particular history.</p>
+<p>Averaging over <span class="math">\(C\)</span> extracts the common predictable structure, and the contribution of the specific path to the representation is recored by the resisudal.</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+    </div>
+    <p class="article-tags">
+        <a href="https://gmodk.github.io/tag/consciousness.html">#consciousness</a>         <a href="https://gmodk.github.io/tag/representation.html">#representation</a>    </p>
+    <nav class="article-nav" aria-label="Article navigation">
+    </nav>
+</article>
+        </main>
+
+        <footer class="site-footer">
+            <p class="footer-small">I deliver these explorations freely and with no restrictions at all. Share them, break them, make them better. And extend the same courtesy to the next explorer.
+            <p class="footer-small">Generated with <a href="https://getpelican.com/">Pelican</a> using <a href="https://gitea.com/gmodk/blog">this code</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>

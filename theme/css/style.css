@@ -1,0 +1,322 @@
+/* Terminal-inspired Pelican theme based on the supplied iTerm screenshot. */
+
+/* ---------- Tokens ---------- */
+/* --cyan: #69c7d2; */
+:root {
+  color-scheme: dark;
+  --bg: #202020;
+  --panel: #292929;
+  --fg: #f0f0f0;
+  --muted: #a5a5a5;
+  --cyan: #6a9196;
+  --blue: #7771e8;
+  --purple: #a78bfa;
+  --green: #82d66b;
+  --red: #e87968;
+  --yellow: #e5cf65;
+  --rule: #414141;
+  --code-bg: #171717;
+
+  --page-width: 75vw;     /* header + content + footer */
+  --reading-width: 50vw;  /* content column only */
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+  line-height: 1.75;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Layout ---------- */
+.site-shell {
+  width: var(--page-width);
+  max-width: none;
+  margin: 0 auto;            /* centered: 12.5vw free on each side */
+  padding: 2.2rem 0 2rem;
+}
+
+/* Everything between header and footer: 50% of the window, left-aligned */
+.site-shell > :not(.site-header):not(.site-footer) {
+  width: var(--reading-width);
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* ---------- Header & nav ---------- */
+.site-header {
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-title {
+  display: inline-block;
+  color: var(--cyan);
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.site-title::before { content: "➜ "; color: var(--green); }
+
+.site-subtitle {
+  margin: .35rem 0 .8rem;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem 1.2rem;
+  margin-top: .8rem;
+  font-size: .92rem;
+}
+.site-nav a { color: var(--cyan); text-decoration: none; }
+.site-nav a::before { content: "./"; color: var(--muted); }
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  color: var(--yellow);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--green);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+a:hover,
+a:focus-visible { color: var(--yellow); }
+a:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+
+/* ---------- Headings & text ---------- */
+h1, h2, h3, h4 {
+  color: var(--fg);
+  font-weight: 750;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+h1 {
+  margin: 0 0 1.1rem;
+  font-size: clamp(1.35rem, 3.7vw, 1.8rem);
+  letter-spacing: -.04em;
+}
+h2 { margin: 2.5rem 0 .9rem; color: var(--cyan); font-size: 1.15rem; }
+h2::before { content: "## "; color: var(--purple); }
+h3 { font-size: 1.02rem; color: var(--yellow); }
+
+p { margin: 0 0 1.1rem; }
+
+.intro { margin-bottom: 2.8rem; }
+.intro h1 { color: var(--cyan); }
+.intro h1::before { content: "$ "; color: var(--green); }
+
+.prose > :first-child { margin-top: 0; }
+.prose > :last-child { margin-bottom: 0; }
+
+.muted { color: var(--muted); }
+
+/* ---------- Post lists ---------- */
+.post-list h2 { margin-top: 0; }
+
+.entries,
+.plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.plain-list li { margin-bottom: .45rem; }
+
+.entry {
+  display: grid;
+  grid-template-columns: 8.4rem minmax(0, 1fr);
+  gap: .15rem .8rem;
+  align-items: baseline;
+  margin: 0 0 .8rem;
+}
+.entry time,
+.article-meta {
+  color: var(--muted);
+  font-size: .82rem;
+  font-variant-numeric: tabular-nums;
+}
+.entry time::before { content: "["; color: var(--blue); }
+.entry time::after { content: "]"; color: var(--blue); }
+.entry a { width: fit-content; }
+
+.entry-summary {
+  grid-column: 2;
+  margin: 0;
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.55;
+}
+.entry-summary-clamped {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.archive h1,
+.taxonomy h1 { margin-bottom: 1.8rem; }
+
+/* ---------- Article ---------- */
+.article-header { margin-bottom: 2rem; }
+.article-header h1 { margin-bottom: .45rem; color: var(--cyan); font-size: clamp(.85rem, 1.6vw, 1.1rem); letter-spacing: -.02em;}
+.article-header h1::before { content: "# "; color: var(--purple); }
+.article-meta { margin: 0; }
+.article-subtitle { margin-top: 1rem; color: var(--muted); }
+
+.article-content { overflow-wrap: break-word; }
+.article-content h2 { margin-top: 2.5rem; }
+.article-content h3 { margin-top: 2rem; }
+
+.article-content img,
+.page-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto;
+}
+.article-content figure { margin: 1.5rem 0; }
+.article-content figcaption {
+  color: var(--muted);
+  font-size: .82rem;
+  text-align: center;
+}
+.article-content blockquote {
+  margin: 1.4rem 0;
+  padding: .1rem 0 .1rem 1.1rem;
+  border-left: 2px solid var(--purple);
+  color: #c8c8c8;
+}
+.article-content ul,
+.article-content ol,
+.page-content ul,
+.page-content ol { padding-left: 1.5rem; }
+.article-content li,
+.page-content li { margin: .25rem 0; }
+
+.article-tags { margin-top: 2rem; color: var(--muted); font-size: .85rem; }
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-size: .85rem;
+}
+
+.page-header { margin-bottom: 1.5rem; }
+
+/* ---------- Code, rules, tables ---------- */
+code, pre { font-family: inherit; font-size: .9em; }
+code {
+  padding: .08em .3em;
+  color: var(--yellow);
+  background: var(--code-bg);
+  border: 1px solid #353535;
+  border-radius: 3px;
+}
+pre {
+  overflow: auto;
+  max-width: 100%;
+  padding: 1rem 1.1rem;
+  color: var(--fg);
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  line-height: 1.6;
+}
+pre code { padding: 0; color: inherit; background: transparent; border: 0; }
+
+hr { height: 1px; margin: 2rem 0; border: 0; background: var(--rule); }
+
+table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+th, td {
+  padding: .45rem .7rem;
+  border: 1px solid var(--rule);
+  text-align: left;
+}
+th { color: var(--cyan); background: var(--panel); }
+
+/* ---------- Landing page: recent articles (_kernel) ---------- */
+.landing-link { margin-top: 2rem; }
+.landing-link a { color: var(--green); }
+
+.recent-theses { margin-top: 2.8rem; }
+.recent-theses > h2 { margin-bottom: 1.25rem; }
+.recent-theses .landing-link { margin-top: 1.25rem; }
+
+.recent-entries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.recent-entry {
+  padding: 1rem 0 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+.recent-entry h3 {
+  margin: 0 0 .45rem;
+  font-size: 1.08rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  margin-top: 4.3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.65;
+}
+.site-footer p { margin-bottom: .65rem; }
+.site-footer a { color: var(--cyan); }
+.footer-small { font-size: .75rem; }
+
+/* ---------- Small screens (kept last so it overrides the rules above) ---------- */
+@media (max-width: 560px) {
+  body { font-size: 14px; }
+
+  .site-shell {
+    width: calc(100% - 2rem);
+    padding-top: 1.4rem;
+  }
+  .site-shell > :not(.site-header):not(.site-footer) { width: 100%; }
+
+  .site-header { margin-bottom: 2.3rem; }
+
+  .entry {
+    grid-template-columns: 1fr;
+    gap: .05rem;
+    margin-bottom: 1rem;
+  }
+  .entry-summary { grid-column: 1; }
+
+  .article-nav { flex-direction: column; }
+}
